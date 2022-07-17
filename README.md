@@ -44,7 +44,7 @@ Vue 3 / Vuex / Scss 를 사용하였습니다. 페이지 디자인은 kakao brun
 
 - firebase DB로부터 받아온 post 데이터( title / subTitle / contents / date / category ) 에 대해 Card 형태의 컴포넌트로 props 전달 및 정보 출력
 
-- firebase DB로부터 받아온 데이터 내 개별 JSON형태 데이터에서 Key 들은 구조분해할당을 통해 구분 후 각각 다른 스타일 속성 부여하여 구분 가능
+- firebase DB로부터 받아온 데이터 내 개별 데이터에서 Key 들은 구조분해할당을 통해 구분 후 각각 다른 스타일 속성 부여하여 구분 가능
 
 - Card 컴포넌트 상단 마우스 커서 유무에 따른 hover effect 구현
 
