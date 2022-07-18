@@ -36,35 +36,44 @@ Vue 3 / Vuex / Scss 를 사용하였습니다. 페이지 디자인은 kakao brun
 
 ### DB 게시판 구현
 
-- 홈 버튼 구현, 모바일 접속시 상단 중간 홈 버튼 고정 및 blur 스타일링
+- 홈 버튼 구현, 모바일 접속시 상단 중간 홈 버튼 고정 및 blur 스타일링  
+![blog08](https://user-images.githubusercontent.com/68191058/179524527-d1614276-630d-412f-8299-c59aeb64c9a7.gif)  
 
 - 글 작성, Github 페이지 이동 버튼 구현
 
 - Vuex 내 액션 함수 비동기 호출을 통한 firebase DB 접근과 데이터 수신시 mutation을 통한 state 갱신
 
-- firebase DB로부터 받아온 post 데이터( title / subTitle / contents / date / category ) 에 대해 Card 형태의 컴포넌트로 props 전달 및 정보 출력
+- firebase DB로부터 받아온 post 데이터( title / subTitle / contents / date / category ) 에 대해 Card 형태의 컴포넌트로 props 전달 및 정보 출력  
+![blog03](https://user-images.githubusercontent.com/68191058/179523990-2ed228ad-1292-433e-8204-42dbd4189026.gif)  
 
 - firebase DB로부터 받아온 데이터 내 개별 데이터에서 Key 들은 구조분해할당을 통해 구분 후 각각 다른 스타일 속성 부여하여 구분 가능
 
-- Card 컴포넌트 상단 마우스 커서 유무에 따른 hover effect 구현
+- Card 컴포넌트 상단 마우스 커서 유무에 따른 hover effect 구현  
+![blog01](https://user-images.githubusercontent.com/68191058/179523671-7486f4ff-48ec-4e7c-b638-a788e0f32233.gif)  
 
-- Card 컴포넌트 클릭시 라우터링크를 통한 /view-post:title 페이지로 이동
+- Card 컴포넌트 클릭시 라우터링크를 통한 /view-post:title 페이지로 이동  
+![blog04](https://user-images.githubusercontent.com/68191058/179524151-a370380c-9042-45b1-b10d-c0b505d9e2e6.gif)  
 
 
 ### 게시글 열람 페이지 구현
 
 - position: fixed 를 통해 title, subTitle, date 등의 정보가 담긴 레이아웃과 content, category가 담긴 레이아웃 구분(스크롤시 title/subTitle,date 정보 감춰짐)
 
-- content 하단 category 클릭시 해당 category로 작성된 모든 작성글 리스트가 출력된 /post-list/:category 페이지로 이동. post-list/:category 의 경우 클릭된 카테고리의 params를 받아 리듀서 내 post 데이터 내 category 배열 안에 params(클릭 된 category 정보) 와 같은 category명칭을 가진 index가 있는지 확인 후 배열 형태로 저장
+- content 하단 category 클릭시 해당 category로 작성된 모든 작성글 리스트가 출력된 /post-list/:category 페이지로 이동. post-list/:category 의 경우 클릭된 카테고리의 params를 받아 리듀서 내 post 데이터 내 category 배열 안에 params(클릭 된 category 정보) 와 같은 category명칭을 가진 index가 있는지 확인 후 배열 형태로 저장  
+![blog06](https://user-images.githubusercontent.com/68191058/179524337-e6524756-3410-4c8c-b1f2-f5b0dc825b3f.gif)![blog07](https://user-images.githubusercontent.com/68191058/179524430-1cd3484c-52fb-401f-9ec1-789693a5a70d.gif)  
 
-- 열람 페이지 하단 '다른 포스트' 열람 기능 구현. 게시글 열람시 해당 게시글 index 정보를 받아오고 해당 게시글 포함, 게시글의 index 위아래 2개, 총 5개의 post 정보를 배열 형태로 받아 title/date 정보 출력. 최상단, 최하단 게시글의 경우 예외처리를 통해 배열 내 index 부재로 인한 오류 방지
+
+- 열람 페이지 하단 '다른 포스트' 열람 기능 구현. 게시글 열람시 해당 게시글 index 정보를 받아오고 해당 게시글 포함, 게시글의 index 위아래 2개, 총 5개의 post 정보를 배열 형태로 받아 title/date 정보 출력. 최상단, 최하단 게시글의 경우 예외처리를 통해 배열 내 index 부재로 인한 오류 방지  
+![blog05](https://user-images.githubusercontent.com/68191058/179524245-8553bcfa-d4f1-421d-9e44-b98c6379e665.gif)  
 
 
 ### 게시글 작성 페이지 구현
 
-- 카테고리 입력후 Enter keydown 시 해당 input props를 받아 하단에 카테고리 항목 블록 생성 구현
+- 카테고리 입력후 Enter keydown 시 해당 input props를 받아 하단에 카테고리 항목 블록 생성 구현  
+![blog09](https://user-images.githubusercontent.com/68191058/179524610-f53935cd-00e7-47a6-a65c-90fb4e9cd999.gif)![blog10](https://user-images.githubusercontent.com/68191058/179524768-49425bcd-deb8-4b97-a61f-4a0743bace4e.gif)  
 
-- 작성하기 버튼 클릭시 입력받은 title/subTitle/category배열/date/글번호/content/content 요약 정보가 객체에 담기고 vuex 액션함수 호출 및 firebase DB로 객체 업데이트 및 Home 페이지로 이동 구현
+- 작성하기 버튼 클릭시 입력받은 title/subTitle/category배열/date/글번호/content/content 요약 정보가 객체에 담기고 vuex 액션함수 호출 및 firebase DB로 객체 업데이트 및 Home 페이지로 이동 구현  
+![blog11](https://user-images.githubusercontent.com/68191058/179524894-c22a5805-0361-4e8c-953a-cd7b3a2612c9.gif)  
 
 - text-editor 라이브러리 Quill을 사용한 내용 입력 
 
